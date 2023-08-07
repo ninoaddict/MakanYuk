@@ -26,7 +26,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // connect to DB
-mongoose.connect("mongodb://localhost:27017/makanyukDB", { useNewUrlParser : true});
+mongoose.connect("mongodb+srv://adril:merinmanurung123@cluster0.a6iyulo.mongodb.net/makanyukDB", { useNewUrlParser : true});
 // mongoose.set("useCreateIndex", true);
 // DB model
 const foodSchema = new mongoose.Schema({
@@ -95,7 +95,8 @@ app.get('/', async(req, res) =>{
         res.render("home", response);
         //res.status(200).json(response);
     } catch(err){
-        res.status(500).json({error: true, message: "Internal Server Error"});
+        console.log(err);
+        res.status(500).json({error: true, message: "Internal Server Error Babi!"});
     }
 });
 
@@ -206,7 +207,7 @@ app.get('/login', (req, res)=>{
     catch{
         res.status(500).json({error: true});
     }
-})
+});
 
 app.get('/register', (req, res)=>{
     try{
@@ -236,7 +237,7 @@ app.post('/register', (req, res) => {
     }else{
         res.redirect("/register");
     }
-})
+});
 
 app.post('/login', (req, res)=>{
     const user = new User({
@@ -252,7 +253,7 @@ app.post('/login', (req, res)=>{
             });
         }
     });
-})
+});
 
 app.get('/eatlist', (req, res)=>{
     try{
@@ -267,7 +268,7 @@ app.get('/eatlist', (req, res)=>{
     catch{
         res.status(500).json({error: true});
     }
-})
+});
 
 app.listen(port, ()=> {
     console.log("Server started on port" + port);
