@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+        <link rel="stylesheet" href="/css/styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <title>Login Page</title>
+
+        <style>
+            .intrologin{
+                margin: 0 auto 0 auto;
+                width:830px;
+                height: calc(100vw * 0.436);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }   
+            .introtext{
+                color: #FFF;
+                text-align: center;
+                font-family: Montserrat;    
+                font-size: 96px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                margin-bottom: 37.6px;
+            }
+            input{
+                box-sizing: border-box;
+            }
+            #username{
+                padding-left: 15px;
+                border: 0;
+                width: 377px;
+                height: 31px;
+                flex-shrink: 0;
+                border-radius: 30px;
+                background: #FFF;
+                box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25);
+                color: rgba(0, 0, 0, 0.50);
+                font-family: Montserrat;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+            #password{
+                padding-left: 15px;
+                border: 0;
+                width: 377px;
+                height: 31px;
+                flex-shrink: 0;
+                border-radius: 30px;
+                background: #FFF;
+                box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25);
+                color: rgba(0, 0, 0, 0.50);
+                font-family: Montserrat;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+            .gaga{
+                position: absolute;
+                top: 33%;
+                right: 2%;
+            }
+            .login-button{
+                box-sizing: border-box;
+                border-radius: 39.278px;
+                background: #000;
+                box-shadow: 0px 6.54639196395874px 5.2371134757995605px 0px rgba(0, 0, 0, 0.25);
+                display: flex;
+                width: 127px;
+                height: 40.588px;
+                padding: 15.711px 41.897px;
+                justify-content: center;
+                align-items: center;
+                gap: 15.711px;
+                flex-shrink: 0;
+                color: #FFF;
+                text-align: center;
+                font-feature-settings: 'cv04' on, 'cv03' on, 'cv02' on, 'cv11' on, 'clig' off, 'liga' off;
+                font-family: Montserrat;
+                font-size: 20.948px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%; /* 31.423px */
+            }
+            .createacc{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                height: 300px;
+                box-sizing: border-box;
+                padding-top: 30px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <img class="img-fluid" src="/asset/homebg.png" alt="" style="position: absolute; top: 0;min-height: 512px;z-index: -1;">
+        <header style="position: absolute; top: 44px;width: 100%;">
+            <nav class="navbar navbar-expand-lg" style="padding: 0;">
+                <div class="container-fluid d-flex justify-content-center" style="gap:30px;">
+                    <a href="/" style="width: 230px; height: 52px;">
+                        <img src="/asset/LOGO.png" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="flex-grow: 0;">
+                        <ul class="navbar-nav" style="gap: 40px;">
+                            <li class="nav-item d-flex align-items-center">
+                                <a href="/"
+                                >Categories</a>
+                            </li>
+                            <li class="nav-item d-flex align-items-center">
+                                <a href="/">Top Rated</a>
+                            </li>
+                            <li class="nav-item d-flex align-items-center">
+                                <a href="/eatlist">Eatlist</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/login"
+                                class="d-flex align-items-center justify-content-center"
+                                style="color: #FFF; width: fit-content; padding: 12px 32px; gap: 12px; text-decoration: none; border-radius: 30px; background: #000; box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25);
+                                font-family: 'Montserrat', sans-serif;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 150%; /* 24px */"
+                                >Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section class="intrologin">
+            <!-- <div style="height: 300px;"></div> -->
+            <div>
+                <h1 class="introtext">Login!</h1>
+            </div>
+            <div class="login-container">
+                <form action="/login" method="POST" style="display: flex; flex-direction: column; gap: 19px; align-items: center;">
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                    <div style="position: relative;margin-bottom: 60px;">
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none" class="gaga">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00006 3.33333C6.52727 3.33333 5.33333 4.52724 5.33333 6C5.33333 7.47276 6.52727 8.66667 8.00006 8.66667C9.47285 8.66667 10.6668 7.47276 10.6668 6C10.6668 4.52724 9.47285 3.33333 8.00006 3.33333ZM6.6667 6C6.6667 5.26362 7.26366 4.66667 8.00006 4.66667C8.73645 4.66667 9.33342 5.26362 9.33342 6C9.33342 6.73638 8.73645 7.33333 8.00006 7.33333C7.26366 7.33333 6.6667 6.73638 6.6667 6Z" fill="#777676"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.9296 5.70139C15.9296 5.70139 15.9298 5.70186 15.3336 6C15.9298 6.29814 15.9296 6.29861 15.9296 6.29861L15.9285 6.30075L15.9262 6.30531L15.9187 6.32012C15.9123 6.33248 15.9033 6.34979 15.8917 6.37171C15.8685 6.41553 15.8349 6.47785 15.7909 6.55601C15.703 6.71224 15.5737 6.93232 15.404 7.19502C15.0655 7.71913 14.5623 8.4196 13.9032 9.12263C12.5972 10.5157 10.5998 12 8.00006 12C5.40033 12 3.40294 10.5157 2.0969 9.12263C1.4378 8.4196 0.934613 7.71913 0.59612 7.19502C0.426459 6.93232 0.297084 6.71224 0.209202 6.55601C0.165235 6.47785 0.131579 6.41553 0.108387 6.37171C0.0967893 6.34979 0.0878014 6.33248 0.0814431 6.32012L0.0738777 6.30531L0.0715769 6.30075L0.0707977 6.2992C0.0707977 6.2992 0.0702662 6.29814 0.666564 6C0.0702662 5.70186 0.0705009 5.70139 0.0705009 5.70139L0.0715769 5.69925L0.0738777 5.69469L0.0814431 5.67988C0.0878014 5.66752 0.0967893 5.65021 0.108387 5.62829C0.131579 5.58447 0.165235 5.52215 0.209202 5.44399C0.297084 5.28776 0.426459 5.06768 0.59612 4.80498C0.934613 4.28087 1.4378 3.5804 2.0969 2.87737C3.40294 1.48429 5.40033 0 8.00006 0C10.5998 0 12.5972 1.48429 13.9032 2.87737C14.5623 3.5804 15.0655 4.28087 15.404 4.80498C15.5737 5.06768 15.703 5.28776 15.7909 5.44399C15.8349 5.52215 15.8685 5.58447 15.8917 5.62829C15.9033 5.65021 15.9123 5.66752 15.9187 5.67988L15.9262 5.69469L15.9285 5.69925L15.9296 5.70139ZM1.7162 6.47165C1.59653 6.28637 1.49994 6.12591 1.42708 6C1.49994 5.87409 1.59653 5.71363 1.7162 5.52835C2.02355 5.05246 2.47871 4.4196 3.06964 3.78929C4.26366 2.51571 5.93302 1.33333 8.00006 1.33333C10.0671 1.33333 11.7365 2.51571 12.9305 3.78929C13.5214 4.4196 13.9766 5.05246 14.2839 5.52835C14.4036 5.71363 14.5002 5.87409 14.573 6C14.5002 6.12591 14.4036 6.28637 14.2839 6.47165C13.9766 6.94754 13.5214 7.5804 12.9305 8.21071C11.7365 9.48429 10.0671 10.6667 8.00006 10.6667C5.93302 10.6667 4.26366 9.48429 3.06964 8.21071C2.47871 7.5804 2.02355 6.94754 1.7162 6.47165Z" fill="#777676"/>
+                            <path d="M15.3336 6L15.9296 5.70139C16.0235 5.88907 16.0235 6.11093 15.9296 6.29861L15.3336 6Z" fill="#777676"/>
+                            <path d="M0.0705009 5.70139L0.666564 6L0.0702661 6.29814C-0.0235784 6.11046 -0.0233436 5.88907 0.0705009 5.70139Z" fill="#777676"/>
+                        </svg>
+                    </div>
+                    <button type="submit" class="login-button">Login</button>
+                </form>
+            </div>
+        </section>
+        <section class="createacc">
+            <p style="color: #000;
+            text-align: center;
+            font-feature-settings: 'calt' off;
+            font-family: Montserrat;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 21px */
+            letter-spacing: -0.14px;">Not a member</p>
+            <a href="/register" style="color: #000;
+            text-align: center;
+            font-feature-settings: 'calt' off;
+            font-family: Montserrat;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 30px */
+            letter-spacing: -0.2px;
+            text-decoration-line: underline;
+            ">Create your account!</a>
+        </section>
+        <footer>
+            <div class="footercontainer">
+                <div class="footerelementcontainer">
+                    <div class ="footerlogo">
+                        <img src="/asset/footerlogo.png" alt="" class="img-fluid">
+                        <img src="/asset/footerbrand.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="footertext">
+                        <a href="/about" class="footerlink">
+                            About Us
+                        </a>
+                    </div>
+                    <div class="itb" style="width: 500px;">
+                        <img src="/asset/ganesha.png" alt="">
+                        <div class="itbloc">
+                            <h2 style="color: #FFF;
+                            font-family: Poppins;
+                            font-size: 23.516px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: normal;margin: 0;">ITB Kampus Ganesha</h2>
+                            <p style="color: #FFF;
+                            font-family: Poppins;
+                            font-size: 14.519px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;width: 326.923px;margin: 0;">Jl. Ganesa No.10, Lb. Siliwangi, Kecamatan Coblong, Kota Bandung, Jawa Barat 40132</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script>
+            document.querySelector(".gaga").addEventListener("click", ()=>{
+                const type = document.querySelector("#password").getAttribute("type") === "password" ? "text" : "password";
+                document.querySelector("#password").setAttribute("type", type);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,244 @@
+*{
+    padding: 0;   
+    margin: 0;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+header nav a {
+    display: flex;
+    width: 108px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+}
+
+footer a {
+    display: flex;
+    width: 108px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.footerelementcontainer{
+    display: flex;
+    gap: 150px;
+}
+
+.footercontainer {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, #0F120E 0%, #073238 100%);
+    height: 258px;
+    width: 100%;
+    padding-left: 71px;
+}
+
+.footerlogo{
+    display: inline-block;
+}
+
+.footertext{
+    display: inline-flex;
+    align-items: center;  
+    margin-right: 2.7rem;
+}
+
+.footerlink{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+.itb{
+    display: inline-flex;
+    gap: 30px;
+}
+
+.itbloc{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box-header{
+    margin-top: 6rem;
+    margin-left: calc((100% - 972px)/2);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.box-title{
+    width: 215.385px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 36.923px;
+    background: #ECF2EB;
+    box-shadow: 0px 4.92307710647583px 4.92307710647583px 0px rgba(0, 0, 0, 0.25) inset;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-title-span{
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Poppins;
+    font-size: 27.029px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 40.543px */
+    margin: 0;
+}
+
+.rectangle1{
+    display: inline-flex;
+    width: 246px; 
+    height: 48px; 
+    left: 140px;
+    position: absolute; 
+    background: #1C939A; 
+    box-shadow: 0px 4.92307710647583px 4.92307710647583px rgba(0, 0, 0, 0.25) inset; 
+    border-radius: 36.92px;
+    z-index: -1;
+    align-items: center;
+}
+
+.box-month{
+    color: #FFF;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Poppins;
+    font-size: 27.029px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 40.543px */
+    padding-left: 98px;
+}
+
+.box-content{
+    margin: 0 auto 0 auto;
+    width: 972px;
+    height: 673px;
+    border-radius: 30px;
+    background: #F2F2F2;
+    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.25) inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont{
+    margin-bottom: 50px;
+}
+
+footer{
+    overflow: hidden;
+}
+
+.gallery{
+    width: 864px;
+    height: 570px;
+    display: flex;
+    gap: 60px;
+    overflow-x: scroll;
+}
+
+.gallery-item{
+    background: white;
+    border-radius: 20px;
+    box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.25);
+    height: 455px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-item img{
+    margin: 55px 16px 30.58px 16px;
+    width: 214px;
+    height: 201px;
+    margin-bottom: 30.58px;
+    margin-top: 55px;
+    border-radius: 10px;
+}
+
+.gallery::-webkit-scrollbar{
+    height: 16px;
+    /* height: 50px; */
+}
+
+.gallery::-webkit-scrollbar-thumb{
+    border-radius: 45px;
+    background-color: #D9D9D9;
+}
+
+.rating{
+    display: flex;
+    align-items: center;
+    width: 214px;
+}
+
+.rating-number{
+    color: #FFD74B;
+    font-family: Poppins;
+    font-size: 46.786px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 70.179px */
+    padding: 0;
+}
+
+.foodname{
+    color: #000;
+    font-family: Poppins;
+    font-size: 16.636px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24.954px */
+    margin: 0;
+}
+
+.textandprice{
+    width: 214px;
+}
+
+.pricecurr{
+    color: #FFD74B;
+    font-family: Poppins;
+    font-size: 23.874px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 35.811px */
+}
+
+.pricenumber{
+    color: #000;
+    font-family: Poppins;
+    font-size: 23.874px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+}
+

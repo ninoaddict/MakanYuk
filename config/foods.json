@@ -1,0 +1,189 @@
+[
+    {
+        "name": "Mashed Potato",
+        "rating": [],
+        "currentRating": "0",
+        "categories": ["makanan non kuah", "murah"],
+        "price": "20.000",
+        "kalori" : "179",
+        "lemak" : "7.4",
+        "karbohidrat" : "24",
+        "protein" : "3.4"
+    },
+    {   
+        "name": "Sate Taichan",
+        "rating": [],
+        "currentRating": "0",
+        "categories": ["makanan non kuah", "murah", "non sayur"],
+        "price": "18.000",
+        "kalori" : "193",
+        "lemak" : "9.3",
+        "karbohidrat" : "13.4",
+        "protein" : "14.6"
+    },
+    {
+        "name": "Kebab",
+        "rating": [],
+        "currentRating": "0",
+        "categories": ["makanan non kuah", "murah", "sayur"],
+        "price": "25.000",
+        "kalori" : "435",
+        "lemak" : "15",
+        "karbohidrat" : "55",
+        "protein" : "20"
+    },
+    {
+        "name": "Cah Kangkung",
+        "rating": [],
+        "currentRating": "0",
+        "categories": ["makanan berkuah", "murah", "sayur"],
+        "price": "15.000",
+        "kalori" : "150",
+        "lemak" : "9.2",
+        "karbohidrat" : "2",
+        "protein" : "2.2"
+    },
+    {
+        "name": "Sayur Bening",
+        "rating": [],
+        "currentRating": "0",
+        "categories": ["makanan berkuah", "murah", "sayur"],
+        "price": "10.000",
+        "kalori" : "36",
+        "lemak" : "0.4",
+        "karbohidrat" : "2",
+        "protein" : "2.2"
+    },
+    {
+        "name": "Sayur Sop",
+        "rating": [],
+        "currentRating": "0",
+        "categories": ["makanan berkuah", "murah", "sayur"],
+        "price": "10.000",
+        "kalori" : "66",
+        "lemak" : "5",
+        "karbohidrat" : "3",
+        "protein" : "4"
+    },
+    {
+        "name": "Sandwich Roti Gandum",
+        "rating": [],
+        "currentRating": "0",
+        "categories": ["makanan non kuah", "murah", "sayur"],
+        "price": "18.000",
+        "kalori" : "250",
+        "lemak" : "11",
+        "karbohidrat" : "18",
+        "protein" : "14"
+    },
+    {
+        "name": "Salad",
+        "rating": [],
+        "currentRating": "0",
+        "categories": ["makanan non kuah", "mahal", "sayur"],
+        "price": "60.000",
+        "kalori" : "200",
+        "lemak" : "14",
+        "karbohidrat" : "10",
+        "protein" : "5"
+    },
+    {
+        "name": "Capcay Kuah Seafood",
+        "rating": [],
+        "currentRating": "0",
+        "categories": ["makanan kuah", "murah", "sayur"],
+        "price": "20.000",
+        "kalori" : "355",
+        "lemak" : "14",
+        "karbohidrat" : "10",
+        "protein" : "10"
+    },
+    {
+        "name": "Soto Ayam",
+        "rating": [],
+        "currentRating": "0",
+        "categories": ["makanan kuah", "murah", "non sayur"],
+        "price": "18.000",
+        "kalori" : "219",
+        "lemak" : "8",
+        "karbohidrat" : "17.6",
+        "protein" : "19.4"
+    },
+    {
+        "name": "Tumis Buncis",
+        "rating": [],
+        "currentRating": "0",
+        "categories": ["makanan non kuah", "murah", "sayur"],
+        "price": "15.000",
+        "kalori" : "65",
+        "lemak" : "3.45",
+        "karbohidrat" : "8.15",
+        "protein" : "1.97"
+    },
+    {
+        "name": "Sayur Lodeh",
+        "rating": [],
+        "currentRating": "0",
+        "categories": ["makanan kuah", "murah", "sayur"],
+        "price": "12.000",
+        "kalori" : "162",
+        "lemak" : "9.47",
+        "karbohidrat" : "14.73",
+        "protein" : "6.66"
+    },
+    {
+        "name": "Opor Ayam",
+        "rating": [],
+        "currentRating": "0",
+        "categories": ["makanan kuah", "murah", "non sayur"],
+        "price": "20.000",
+        "kalori" : "392",
+        "lemak" : "20.82",
+        "karbohidrat" : "13.43",
+        "protein" : "39.67"
+    },
+    {
+        "name": "Sup Jagung",
+        "rating": [],
+        "currentRating": "0",
+        "categories": ["makanan kuah", "murah", "sayur"],
+        "price": "18.000",
+        "kalori" : "98",
+        "lemak" : "6",
+        "karbohidrat" : "8",
+        "protein" : "3.1"
+    },
+    {
+        "name": "Ayam Geprek",
+        "rating": [],
+        "currentRating": "0",
+        "categories": ["makanan non kuah", "murah", "non sayur"],
+        "price": "18.000",
+        "kalori" : "263",
+        "lemak" : "17.99",
+        "karbohidrat" : "7.6",
+        "protein" : "17.61"
+    },
+    {
+        "name": "Omelet Sayur",
+        "rating": [],
+        "currentRating": "0",
+        "categories": ["makanan non kuah", "murah", "sayur"],
+        "price": "10.000",
+        "kalori" : "70.33",
+        "lemak" : "4.6",
+        "karbohidrat" : "0.96",
+        "protein" : "6.1"
+    },
+    {
+        "name": "Ayam Asam Manis",
+        "rating": [],
+        "currentRating": "0",
+        "categories": ["makanan non kuah", "murah", "non sayur"],
+        "price": "25.000",
+        "kalori" : "249",
+        "lemak" : "13",
+        "karbohidrat" : "24",
+        "protein" : "10"
+    }
+]
