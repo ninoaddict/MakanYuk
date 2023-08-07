@@ -26,7 +26,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // connect to DB
-mongoose.connect("mongodb+srv://adril:merinmanurung123@cluster0.a6iyulo.mongodb.net/makanyukDB", { useNewUrlParser : true});
+mongoose.connect(process.env.DB_URL, { useNewUrlParser : true});
 // mongoose.set("useCreateIndex", true);
 // DB model
 const foodSchema = new mongoose.Schema({
