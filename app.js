@@ -26,7 +26,15 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // connect to DB
-mongoose.connect(process.env.DB_URL, { useNewUrlParser : true});
+const connectDB = async () => {
+    try {
+      const conn = await mongoose.connect(process.env.DB_URL);
+      console.log(`MongoDB Connected: ${conn.connection.host}`);
+    } catch (error) {
+      console.log(error);
+      process.exit(1);
+    }
+}
 // mongoose.set("useCreateIndex", true);
 // DB model
 const foodSchema = new mongoose.Schema({
@@ -85,7 +93,6 @@ app.get('/', async(req, res) =>{
             myacc = "Login";
             redir= "/login";
         }
-
         const response = {
             myacc : myacc,
             redir : redir,
@@ -270,6 +277,8 @@ app.get('/eatlist', (req, res)=>{
     }
 });
 
-app.listen(port, ()=> {
-    console.log("Server started on port" + port);
-});
+connectDB().then(() => {
+    app.listen(port, () => {
+        console.log("listening for requests");
+    })
+})
