@@ -246,7 +246,7 @@ app.post('/login', (req, res)=>{
     });
     req.login(user, function(err){
         if (err){
-            console.log(err);
+            render('/login');
         }else{
             passport.authenticate("local")(req, res, function(){
                 res.redirect('/');
