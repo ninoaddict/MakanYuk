@@ -206,7 +206,10 @@ app.get('/about', (req, res)=>{
 app.get('/login', (req, res)=>{
     try{
         if (req.isAuthenticated()){
-            res.redirect('/')
+            req.session.save(() =>
+            {
+                return res.redirect('/');
+            });
         }else{
             res.render('login')
         }
@@ -219,7 +222,10 @@ app.get('/login', (req, res)=>{
 app.get('/register', (req, res)=>{
     try{
         if (req.isAuthenticated()){
-            res.redirect('/')
+            req.session.save(() =>
+            {
+                return res.redirect('/');
+            });
         }else{
             res.render('register')
         }
@@ -234,15 +240,24 @@ app.post('/register', (req, res) => {
         User.register({username: req.body.username, email: req.body.email, favoriteCategories: [], favoriteFood: [], ratingGiven: []}, req.body.password, (err, user)=>{
             if (err){
                 console.log(err);
-                res.redirect('/register');
+                req.session.save(() =>
+                {
+                    return res.redirect('/register');
+                });
             }else{
                 passport.authenticate("local")(req, res, function(){
-                    res.redirect('/');
+                    req.session.save(() =>
+                    {
+                        return res.redirect('/');
+                    });
                 })
             }
         });
     }else{
-        res.redirect("/register");
+        req.session.save(() =>
+        {
+            return res.redirect('/register');
+        });
     }
 });
 
@@ -256,7 +271,10 @@ app.post('/login', (req, res)=>{
             render('/login');
         }else{
             passport.authenticate("local")(req, res, function(){
-                res.redirect('/');
+                req.session.save(() =>
+                {
+                    return res.redirect('/');
+                });
             });
         }
     });
@@ -269,7 +287,10 @@ app.get('/eatlist', (req, res)=>{
             let redir = "/myaccount";
             res.render("eatlist", {myacc: myacc, redir: redir});
         }else{
-            res.redirect('/login')
+            req.session.save(() =>
+            {
+                return res.redirect('/login');
+            });
         }
     }
     catch{
