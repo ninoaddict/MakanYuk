@@ -7,6 +7,7 @@ require('dotenv').config();
 const session = require('express-session');
 const passport = require('passport')
 const passportLocalMongoose = require('passport-local-mongoose');
+const MongoStore = require("connect-mongo");
 // const foodsData = require("./config/foods.json")
 
 const app = express();
@@ -19,7 +20,10 @@ app.use(express.static("public"));
 app.use(session({
     secret: process.env.SECRET,
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: false,
+    store: MongoStore.create({
+        mongoUrl: process.env.DB_URL
+    }),
 }));
 
 app.use(passport.initialize());
