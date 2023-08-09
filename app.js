@@ -19,7 +19,7 @@ app.use(express.static("public"));
 app.use(session({
     secret: process.env.SECRET,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: true
 }));
 
 app.use(passport.initialize());
