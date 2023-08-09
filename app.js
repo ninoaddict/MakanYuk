@@ -212,9 +212,7 @@ app.get('/about', (req, res) => {
 app.get('/login', (req, res) => {
     try {
         if (req.isAuthenticated()) {
-            req.session.save(() => {
-                return res.redirect('/');
-            });
+            res.redirect('/');
         } else {
             res.render('login')
         }
@@ -227,9 +225,7 @@ app.get('/login', (req, res) => {
 app.get('/register', (req, res) => {
     try {
         if (req.isAuthenticated()) {
-            req.session.save(() => {
-                return res.redirect('/');
-            });
+            res.redirect('/');
         } else {
             res.render('register')
         }
@@ -249,16 +245,12 @@ app.post('/register', (req, res) => {
                 });
             } else {
                 passport.authenticate("local")(req, res, function () {
-                    req.session.save(() => {
-                        return res.redirect('/');
-                    });
+                    res.redirect('/');
                 })
             }
         });
     } else {
-        req.session.save(() => {
-            return res.redirect('/register');
-        });
+        res.redirect('/register');
     }
 });
 
@@ -272,9 +264,7 @@ app.post('/login', (req, res) => {
             render('/login');
         } else {
             passport.authenticate("local")(req, res, function () {
-                req.session.save(() => {
-                    return res.redirect('/');
-                });
+                res.redirect('/');
             });
         }
     });
@@ -288,7 +278,7 @@ app.get('/eatlist', (req, res) => {
             res.render("eatlist", { myacc: myacc, redir: redir });
         } else {
             req.session.save(() => {
-                return res.redirect('/login');
+                redirect('/login');
             });
         }
     }
