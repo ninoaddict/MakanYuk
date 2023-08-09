@@ -2,96 +2,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
     <title>About Us</title>
     <style>
-        .intro{
+        .intro {
             margin: 0 auto 0 auto;
-            width:830px;
+            width: 830px;
             height: calc(100vw * 0.436);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-        }   
-        .introtext{
-            color: #FFF;
-            text-align: center;
-            font-family: Montserrat;    
-            font-size: 96px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
-            margin-bottom: 37.6px;
-        }
-        .perkenalan{
-            width: 80vw;
-            margin: 70px auto 0 auto;
-        }
-        .desctext{
-            color: #000;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-            font-family: Poppins;
-            font-size: 24px;
-            font-style: normal;
-            font-weight: 300;
-            line-height: normal;
-            justify-content: center;
         }
 
-        .desc{
-            margin-bottom: 100px;
-        }
-        .card{
-            margin: 0 auto 0 auto;
-            width: 475px;
-            height: 475px;
-            flex-shrink: 0;
-            border-radius: 30px;
-            background: linear-gradient(180deg, #FFEE80 0%, rgba(255, 253, 238, 0.00) 100%);
-            box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.25);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 30px;
-        }
-        .name{
-            color: #000;
-            text-align: center;
-            font-family: Poppins;
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: normal;
-        }
-        .role{
-            color: #000;
-            text-align: center;
-            font-family: Poppins;
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 300;
-            line-height: normal;
-        }
-        .card-container{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 100px;
-        }
-        .thanks-container{
-            position: relative;
-            height: 945px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .thanks-text{
+        .introtext {
             color: #FFF;
             text-align: center;
             font-family: Montserrat;
@@ -99,38 +30,34 @@
             font-style: normal;
             font-weight: 700;
             line-height: normal;
-            margin-bottom: 34px;
+            margin-bottom: 37.6px;
         }
-        .thanks-group{
-            color: #FFF;
-            text-align: center;
-            font-family: Poppins;
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 300;
-            line-height: normal;
-        }
-        .card img{
-            border-radius: 20px;
+        @media (max-width: 1328px){
+            .card{
+                width: 350px;
+            }
         }
     </style>
 </head>
+
 <body>
-    <img class="img-fluid" src="/asset/homebg.png" alt="" style="position: absolute; top: 0;min-height: 512px;z-index: -1;">
+    <img class="img-fluid" src="/asset/homebg.png" alt=""
+        style="position: absolute; top: 0;min-height: 512px;z-index: -1;">
     <header style="position: absolute; top: 44px;width: 100%;">
         <nav class="navbar navbar-expand-lg" style="padding: 0;">
             <div class="container-fluid d-flex justify-content-center" style="gap:30px;">
                 <a href="#" style="width: 230px; height: 52px;">
                     <img src="/asset/LOGO.png" alt="logo">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" style="flex-grow: 0;">
                     <ul class="navbar-nav" style="gap: 40px;">
                         <li class="nav-item d-flex align-items-center">
-                            <a href="/categories"
-                            >Categories</a>
+                            <a href="/categories">Categories</a>
                         </li>
                         <li class="nav-item d-flex align-items-center">
                             <a href="/toprated">Top Rated</a>
@@ -139,15 +66,14 @@
                             <a href="/eatlist">Eatlist</a>
                         </li>
                         <li class="nav-item">
-                            <a href="<%=redir%>"
-                            class="d-flex align-items-center justify-content-center"
-                            style="color: #FFF; width: fit-content; padding: 12px 32px; gap: 12px; text-decoration: none; border-radius: 30px; background: #000; box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25);
+                            <a href="<%=redir%>" class="d-flex align-items-center justify-content-center" style="color: #FFF; width: fit-content; padding: 12px 32px; gap: 12px; text-decoration: none; border-radius: 30px; background: #000; box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25);
                             font-family: 'Montserrat', sans-serif;
                             font-size: 16px;
                             font-style: normal;
                             font-weight: 400;
-                            line-height: 150%; /* 24px */"
-                            ><%= myacc %></a>
+                            line-height: 150%; /* 24px */">
+                                <%= myacc %>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -163,10 +89,12 @@
             <img src="/asset/halobrand.png" alt="" width="623.164px">
         </div>
     </section>
-    <section class="perkenalan" >
+    <section class="perkenalan">
         <div class="desc">
             <h1 class="desctext" style="text-indent: 50px; text-align: justify;">
-                Kami dari kelompok 3 milestone dan kami membuat website ini untuk memenuhi tugas milestone yang diberikan kepada kami. Website ini bertujuan untuk memberikan rekomendasi makanan kepada pengguna sesuai dengan kategori yang mereka pilih, serta kalori dan budget yang pengguna inginkan.
+                Kami dari kelompok 3 milestone dan kami membuat website ini untuk memenuhi tugas milestone yang
+                diberikan kepada kami. Website ini bertujuan untuk memberikan rekomendasi makanan kepada pengguna sesuai
+                dengan kategori yang mereka pilih, serta kalori dan budget yang pengguna inginkan.
             </h1>
         </div>
         <div class="card-container">
@@ -175,137 +103,138 @@
                 <div class="text">
                     <div class="name">Dama Dhananjaya Daliman</div>
                     <div class="role">Chief of Project</div>
-                </div>  
+                </div>
             </div>
             <div class="card">
                 <img src="/asset/Cupi.jpg" alt="" width="300px" height="300px">
                 <div class="text">
                     <div class="name">Muhammad Yusuf Rafi</div>
                     <div class="role">Front-end</div>
-                </div>  
+                </div>
             </div>
             <div class="card">
                 <img src="/asset/Adril.jpg" alt="" width="300px" height="300px">
                 <div class="text">
                     <div class="name">Adril Putra Merin</div>
                     <div class="role">Back-end</div>
-                </div>  
+                </div>
             </div>
             <div class="card">
                 <img src="/asset/Diana.jpg" alt="" width="300px" height="300px">
                 <div class="text">
                     <div class="name">Diana Tri Handayani</div>
                     <div class="role">Front-end</div>
-                </div>  
+                </div>
             </div>
             <div class="card">
                 <img src="/asset/Tanto.jpg" alt="" width="300px" height="300px">
                 <div class="text">
                     <div class="name">Hartanto Luwis</div>
                     <div class="role">Back-end</div>
-                </div>  
+                </div>
             </div>
             <div class="card">
                 <img src="/asset/Qie.jpg" alt="" width="300px" height="300px">
                 <div class="text">
                     <div class="name">Rizqi Andhika Pratama</div>
                     <div class="role">UI/UX</div>
-                </div>  
+                </div>
             </div>
             <div class="card">
                 <img src="/asset/Evelyn.jpg" alt="" width="300px" height="300px">
                 <div class="text">
                     <div class="name">Evelyn Yosiana</div>
                     <div class="role">Research & Data</div>
-                </div>  
+                </div>
             </div>
             <div class="card">
                 <img src="/asset/Marvel.jpg" alt="" width="300px" height="300px">
                 <div class="text">
                     <div class="name">Marvel Pangondian</div>
                     <div class="role">Back-end</div>
-                </div>  
+                </div>
             </div>
             <div class="card">
                 <img src="/asset/Irfan.png" alt="" width="300px" height="300px">
                 <div class="text">
                     <div class="name">Irfan Musthofa</div>
                     <div class="role">UI/UX</div>
-                </div>  
+                </div>
             </div>
             <div class="card">
                 <img src="" alt="" width="300px" height="300px">
                 <div class="text">
                     <div class="name">Alfaza Naufal Zakiy</div>
                     <div class="role">-</div>
-                </div>  
+                </div>
             </div>
             <div class="card">
                 <img src="/asset/Sutha.jpg" alt="" width="300px" height="300px">
                 <div class="text">
                     <div class="name">Suthasoma Mahardhika Munthe</div>
                     <div class="role">Back-end</div>
-                </div>  
+                </div>
             </div>
             <div class="card">
                 <img src="/asset/Wege.jpg" alt="" width="300px" height="300px">
                 <div class="text">
                     <div class="name">William Glory Henderson</div>
                     <div class="role">Front-end</div>
-                </div>  
+                </div>
             </div>
             <div class="card">
                 <img src="/asset/Maha.jpg" alt="" width="300px" height="300px">
                 <div class="text">
                     <div class="name">Shabrina Maharani</div>
                     <div class="role">Research & Data</div>
-                </div>  
+                </div>
             </div>
             <div class="card">
                 <img src="/asset/Lutfi.jpg" alt="" width="300px" height="300px">
                 <div class="text">
                     <div class="name">Lutfi Khairul Amal</div>
                     <div class="role">Front-end</div>
-                </div>  
+                </div>
             </div>
         </div>
     </section>
     <div class="thanks-container">
-        <img class="img-fluid" src="/asset/bgbawahcrop.png" alt="" style="height: auto;z-index: -1;border: 0;position: absolute;">
+        <img class="img-fluid" src="/asset/bgbawahcrop.png" alt=""
+            style="height: auto;z-index: -1;border: 0;position: absolute;">
         <h1 class="thanks-text">Thank You!</h1>
         <h5 class="thanks-group">Milestone Kelompok 3</h5>
     </div>
     <footer>
         <div class="footercontainer">
-            <div class="footerelementcontainer">
-                <div class ="footerlogo">
-                    <img src="/asset/footerlogo.png" alt="">
-                    <img src="/asset/footerbrand.png" alt="">
-                </div>
-                <div class="footertext">
-                    <a href="" class="footerlink">
-                        About Us
-                    </a>
-                </div>
-                <div class="itb" style="width: 500px;">
-                    <img src="/asset/ganesha.png" alt="">
-                    <div class="itbloc">
-                        <h2 style="color: #FFF;
+            <div class="footerlogo">
+                <img src="/asset/footerlogo.png" alt="" class="img-fluid">
+                <img src="/asset/footerbrand.png" alt="" class="img-fluid">
+            </div>
+            <div class="footertext">
+                <a href="/about" class="footerlink">
+                    About Us
+                </a>
+            </div>
+            <div class="itb" style="width: 500px;">
+                <img src="/asset/ganesha.png" alt="" class="img-fluid">
+                <div class="itbloc">
+                    <h2 style="color: #FFF;
                         font-family: Poppins;
                         font-size: 23.516px;
                         font-style: normal;
                         font-weight: 700;
                         line-height: normal;margin: 0;">ITB Kampus Ganesha</h2>
-                        <p style="color: #FFF;
+                    <p style="color: #FFF;
                         font-family: Poppins;
                         font-size: 14.519px;
                         font-style: normal;
                         font-weight: 400;
-                        line-height: normal;width: 326.923px;margin: 0;">Jl. Ganesa No.10, Lb. Siliwangi, Kecamatan Coblong, Kota Bandung, Jawa Barat 40132</p>
-                    </div>
+                        line-height: normal;width: 326.923px;margin: 0;">Jl. Ganesa No.10, Lb. Siliwangi, Kecamatan
+                        Coblong, Kota Bandung, Jawa Barat 40132</p>
                 </div>
             </div>
         </div>
     </footer>
 </body>
+
 </html>

@@ -1,0 +1,211 @@
+<%- include('partials/header') %>
+    <style>
+        .cont {
+            align-self: center;
+            max-width: 1142px;
+            display: grid;
+            grid-template-columns: minmax(13rem, 295px) minmax(600px, 787px);
+            column-gap: 60px;
+        }
+
+
+        .product-list-container {
+            max-width: 787px;
+            border-radius: 14px;
+            background: #F2F2F2;
+            box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.25);
+            margin-top: 52px;
+        }
+
+        .search-area {
+            margin-top: 60px;
+            margin-bottom: 65px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .rating {
+            margin-top: 6px;
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .rating-number {
+            font-size: 16px;
+        }
+
+        .textandprice {
+            width: 100%;
+            padding-left: 15px;
+            padding-right: 10px;
+        }
+
+        .pricecurr {
+            font-size: 16.636px;
+        }
+
+        .pricenumber {
+            font-size: 16.636px;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+    <section class="category-sort-container">
+        <div class="cont">
+            <div class="cat-sort-container">
+                <div class="search-title">
+                    Sort By
+                </div>
+                <div class="sort-bar">
+                    <h2 class="sort-title">Price</h2>
+                    <div class="slider-container">
+                        <div class="range-value" id="rangeV"></div>
+                        <input type="range" min="0" max="99999" value="50000" class="slider" id="range" step="1000">
+                        <div class="slider-text">
+                            <p>Rp 0</p>
+                            <p>Rp 99.999</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-title">
+                    Category
+                </div>
+                <div class="category-bar">
+                    <div class="form-check" style="box-sizing: border-box;">
+                        <input class="form-check-input" type="checkbox" value="berkuah" id="berkuah"
+                            style="width: 22px; height: 22px;margin-right: .75rem;margin-top: 9px;" onclick="search()">
+                        <label class="form-check-label" for="berkuah">
+                            Berkuah
+                        </label>
+                    </div>
+                    <div class="form-check" style="box-sizing: border-box;">
+                        <input class="form-check-input" type="checkbox" value="nonkuah" id="nonkuah"
+                            style="width: 22px; height: 22px;margin-right: .75rem;margin-top: 9px;" onclick="search()">
+                        <label class="form-check-label" for="nonkuah">
+                            Non Kuah
+                        </label>
+                    </div>
+                    <div class="form-check" style="box-sizing: border-box;">
+                        <input class="form-check-input" type="checkbox" value="murah" id="murah"
+                            style="width: 22px; height: 22px;margin-right: .75rem;margin-top: 9px;" onclick="search()">
+                        <label class="form-check-label" for="murah">
+                            Murah
+                        </label>
+                    </div>
+                    <div class="form-check" style="box-sizing: border-box;">
+                        <input class="form-check-input" type="checkbox" value="mahal" id="mahal"
+                            style="width: 22px; height: 22px;margin-right: .75rem;margin-top: 9px;" onclick="search()">
+                        <label class="form-check-label" for="mahal">
+                            Mahal
+                        </label>
+                    </div>
+                    <div class="form-check" style="box-sizing: border-box;">
+                        <input class="form-check-input" type="checkbox" value="sayur" id="sayur"
+                            style="width: 22px; height: 22px;margin-right: .75rem;margin-top: 9px;" onclick="search()">
+                        <label class="form-check-label" for="sayur">
+                            Sayur
+                        </label>
+                    </div>
+                    <div class="form-check" style="box-sizing: border-box;">
+                        <input class="form-check-input" type="checkbox" value="nonsayur" id="nonsayur"
+                            style="width: 22px; height: 22px;margin-right: .75rem;margin-top: 9px;" onclick="search()">
+                        <label class="form-check-label" for="nonsayur">
+                            Non Sayur
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="product-list-container">
+                <div class="search-area">
+                    <form action="/" method="POST" class="position-relative">
+                        <input type="text" name="foodquery" id="foodquery" class="foodsearchbar"
+                            placeholder="Nama Makanan" onkeyup="search()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            style="position: absolute;right: 4%; top: 30%;">
+                            <path
+                                d="M15.7539 14.255H14.9639L14.6839 13.985C15.6639 12.845 16.2539 11.365 16.2539 9.755C16.2539 6.165 13.3439 3.255 9.75391 3.255C6.16391 3.255 3.25391 6.165 3.25391 9.755C3.25391 13.345 6.16391 16.255 9.75391 16.255C11.3639 16.255 12.8439 15.665 13.9839 14.685L14.2539 14.965V15.755L19.2539 20.745L20.7439 19.255L15.7539 14.255ZM9.75391 14.255C7.26391 14.255 5.25391 12.245 5.25391 9.755C5.25391 7.26501 7.26391 5.255 9.75391 5.255C12.2439 5.255 14.2539 7.26501 14.2539 9.755C14.2539 12.245 12.2439 14.255 9.75391 14.255Z"
+                                fill="black" />
+                        </svg>
+                    </form>
+                </div>
+                <div class="product-list">
+                    <% for (let i=0; i < foods.length; i++){ %>
+                        <% let categs=foods[i].categories.toString().replaceAll(",", " " ) %>
+                            <div class="product-item <%= categs %>">
+                                <img src="/asset/<%= foods[i].name %>.jpg" alt="" style="object-fit: cover;">
+                                <div class="rating">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 47 50"
+                                        fill="none">
+                                        <path
+                                            d="M23.0324 18.1683L24.8366 24.5241H30.2492L25.8923 27.8349L27.6773 33.9864L23.0324 30.226L18.3876 33.9864L20.1726 27.8349L15.8156 24.5241H21.2282L23.0324 18.1683ZM23.0324 4.0874L18.3876 20.4368H3.83887L15.6813 29.4494L11.19 44.9609L23.0324 35.3761L34.894 44.9609L30.3836 29.4494L42.226 20.4368H27.6773L23.0324 4.0874Z"
+                                            fill="#FFD74B" />
+                                    </svg>
+                                    <span class="rating-number">
+                                        <%= foods[i].currentRating %>
+                                    </span>
+                                </div>
+                                <div class="textandprice">
+                                    <h4 class="foodname">
+                                        <%= foods[i].name%>
+                                    </h4>
+                                    <h3 class="pricenumber">
+                                        <span class="pricecurr">Rp</span>
+                                        <span class="foodprice"><%= foods[i].price %></span>.000
+                                    </h3>
+                                </div>
+                            </div>
+                            <% } %>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const
+            range = document.getElementById('range'),
+            rangeV = document.getElementById('rangeV'),
+            setValue = () => {
+                const
+                    newValue = Number((range.value - range.min) * 100 / (range.max - range.min)),
+                    newPosition = 10 - (newValue * 0.2);
+                rangeV.innerHTML = `<span>${range.value}</span>`;
+                rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
+            };
+        document.addEventListener("DOMContentLoaded", setValue);
+        range.addEventListener('input', setValue);
+
+        // handle search
+        const search = () => {
+            const searchbox = document.querySelector('#foodquery').value.toLowerCase();
+            const maxPrice = rangeInput.value;
+            const product = document.querySelectorAll('.product-item');
+            const pname = document.querySelectorAll('.foodname');
+            const cat = document.querySelectorAll('input[type=checkbox]');
+            let arr = [].filter.call(cat, function (el) {
+                return el.checked;
+            });
+            if (arr.length === 0) {
+                for (let i = 0; i < pname.length; i++) {
+                    let match = pname[i].innerHTML.toLowerCase();
+                    let price = product[i].querySelector('.foodprice').textContent * 1000;
+                    const isvisible = match.includes(searchbox) && (price <= maxPrice);
+                    product[i].classList.toggle("hide", !isvisible);
+                }
+            } else {
+                for (let i = 0; i < arr.length; i++) {
+                    for (let j = 0; j < pname.length; j++) {
+                        var price = product[j].querySelector('.foodprice').textContent * 1000;
+                        let match = pname[j].innerHTML.toLowerCase();
+                        const isvisible = match.includes(searchbox) && product[j].classList.contains(arr[i].value) && (price <= maxPrice);
+                        product[j].classList.toggle("hide", !isvisible);
+                    }
+                }
+            }
+        }
+        var rangeInput = document.getElementById("range");
+        rangeInput.addEventListener("change", search);
+    </script>
+    <%- include('partials/footer') %>

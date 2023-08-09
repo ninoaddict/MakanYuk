@@ -1,90 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <style>
-        .hiuser{
-            position: absolute;
-            top: 189px;
-            left: 40%;
-        }
-        .content-container{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: auto;
-            width: 100%;
-            margin-bottom: 50px;
-        }
-        .favcat{
-            display: flex;
-            flex-direction: column;
-        }
-        .content-box{
-            margin-top: 15px;
-            width: 1122px;
-            height: fit-content;
-            display: flex;
-            box-sizing: border-box;
-            padding: 20px 20px 20px 20px;
-            border-radius: 30px;
-            background: #F2F2F2;
-            gap: 20px;
-            align-items: center;
-        }
-        .content-box-item{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: fit-content;
-            padding: 15px 15px 15px 15px;
-            height: fit-content;
-            border-radius: 30px;
-            background: #FFF;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        }
-        .content-box-img{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 140px;
-            height: 136px;
-            flex-shrink: 0;
-            border-radius: 30px;
-            background: #FFF;
-            box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.25);
-        }
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
 
-        .content-box-img img{
-            object-fit: cover;
-            border-radius: 30px;
-            width: 120px;
-            height: 112px;
-        }
-    </style>
 </head>
+
 <body>
     <header>
-        <img src="/asset/navbg.png" alt="" width="100%" style="position: absolute; top: 0;min-height: 512px;z-index: -1;" >
+        <img src="/asset/navbg.png" alt="" width="100%"
+            style="position: absolute; top: 0;min-height: 512px;z-index: -1;">
         <nav class="navbar navbar-expand-lg" style="margin-top:44px; padding: 0;">
             <div class="container-fluid d-flex justify-content-center" style="gap:30px;">
                 <a href="#" style="width: 230px; height: 52px;">
                     <img src="/asset/LOGO.png" alt="logo">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" style="flex-grow: 0;">
                     <ul class="navbar-nav" style="gap: 40px;">
                         <li class="nav-item d-flex align-items-center">
-                            <a href="/categories"
-                            >Categories</a>
+                            <a href="/categories">Categories</a>
                         </li>
                         <li class="nav-item d-flex align-items-center">
                             <a href="/toprated">Top Rated</a>
@@ -93,15 +41,12 @@
                             <a href="/eatlist">Eatlist</a>
                         </li>
                         <li class="nav-item">
-                            <a href="<%=redir%>"
-                            class="d-flex align-items-center justify-content-center"
-                            style="color: #FFF; width: fit-content; padding: 12px 32px; gap: 12px; text-decoration: none; border-radius: 30px; background: #000; box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25);
+                            <a href="<%=redir%>" class="d-flex align-items-center justify-content-center" style="color: #FFF; width: fit-content; padding: 12px 32px; gap: 12px; text-decoration: none; border-radius: 30px; background: #000; box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25);
                             font-family: 'Montserrat', sans-serif;
                             font-size: 16px;
                             font-style: normal;
                             font-weight: 400;
-                            line-height: 150%; /* 24px */"
-                            >My Account</a>
+                            line-height: 150%; /* 24px */">My Account</a>
                         </li>
                     </ul>
                 </div>
@@ -125,79 +70,81 @@
             font-weight: 400;
             line-height: normal;margin-left: 15px;margin-bottom: 0;">Favorite Categories</p>
             <div class="content-box">
-                <% for (let i = 0; i < currentUser.favoriteCategories.length; i++) {%>
+                <% for (let i=0; i < currentUser.favoriteCategories.length; i++) {%>
                     <div class="content-box-item">
                         <h3 style="color: #000;
                         font-family: Poppins;
                         font-size: 20px;
                         font-style: normal;
                         font-weight: 600;
-                        line-height: normal;margin: 0;"><%= currentUser.favoriteCategories[i] %></h3>
+                        line-height: normal;margin: 0;">
+                            <%= currentUser.favoriteCategories[i] %>
+                        </h3>
                     </div>
-                <% } %>
+                    <% } %>
             </div>
-        <div class="favdish">
-            <p style="color: #000;
+            <div class="favdish">
+                <p style="color: #000;
             font-family: Inter;
             font-size: 20px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;margin-left: 15px;margin-top: 30px;">Favorite Dishes</p>
-            <div class="content-box">
-                <% for (let i = 0; i < currentUser.favoriteFood.length; i++) {%>
-                    <div class="content-box-img">
-                        <img src="/asset/<%= currentUser.favoriteFood[i] %>.jpg" alt="">
-                    </div>
-                <% } %>
+                <div class="content-box">
+                    <% for (let i=0; i < currentUser.favoriteFood.length; i++) {%>
+                        <div class="content-box-img">
+                            <img src="/asset/<%= currentUser.favoriteFood[i] %>.jpg" alt="">
+                        </div>
+                        <% } %>
+                </div>
             </div>
-        </div>
-        <div class="favdish">
-            <p style="color: #000;
+            <div class="favdish">
+                <p style="color: #000;
             font-family: Inter;
             font-size: 20px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;margin-left: 15px;margin-top: 30px;">Your Ratings</p>
-            <div class="content-box">
-                <% for (let i = 0; i < currentUser.ratingGiven.length; i++) {%>
-                    <div class="content-box-img">
-                        <img src="/asset/<%= currentUser.ratingGiven[i] %>.jpg" alt="">
-                    </div>
-                <% } %>
+                <div class="content-box">
+                    <% for (let i=0; i < currentUser.ratingGiven.length; i++) {%>
+                        <div class="content-box-img">
+                            <img src="/asset/<%= currentUser.ratingGiven[i] %>.jpg" alt="">
+                        </div>
+                        <% } %>
+                </div>
             </div>
-        </div>
     </section>
     <footer>
         <div class="footercontainer">
-            <div class="footerelementcontainer">
-                <div class ="footerlogo">
-                    <img src="/asset/footerlogo.png" alt="">
-                    <img src="/asset/footerbrand.png" alt="">
-                </div>
-                <div class="footertext">
-                    <a href="/about" class="footerlink">
-                        About Us
-                    </a>
-                </div>
-                <div class="itb" style="width: 500px;">
-                    <img src="/asset/ganesha.png" alt="">
-                    <div class="itbloc">
-                        <h2 style="color: #FFF;
+            <div class="footerlogo">
+                <img src="/asset/footerlogo.png" alt="" class="img-fluid">
+                <img src="/asset/footerbrand.png" alt="" class="img-fluid">
+            </div>
+            <div class="footertext">
+                <a href="/about" class="footerlink">
+                    About Us
+                </a>
+            </div>
+            <div class="itb" style="width: 500px;">
+                <img src="/asset/ganesha.png" alt="" class="img-fluid">
+                <div class="itbloc">
+                    <h2 style="color: #FFF;
                         font-family: Poppins;
                         font-size: 23.516px;
                         font-style: normal;
                         font-weight: 700;
                         line-height: normal;margin: 0;">ITB Kampus Ganesha</h2>
-                        <p style="color: #FFF;
+                    <p style="color: #FFF;
                         font-family: Poppins;
                         font-size: 14.519px;
                         font-style: normal;
                         font-weight: 400;
-                        line-height: normal;width: 326.923px;margin: 0;">Jl. Ganesa No.10, Lb. Siliwangi, Kecamatan Coblong, Kota Bandung, Jawa Barat 40132</p>
-                    </div>
+                        line-height: normal;width: 326.923px;margin: 0;">Jl. Ganesa No.10, Lb. Siliwangi, Kecamatan
+                        Coblong, Kota Bandung, Jawa Barat 40132</p>
                 </div>
             </div>
         </div>
     </footer>
-    </body> 
-    </html>
+</body>
+
+</html>
