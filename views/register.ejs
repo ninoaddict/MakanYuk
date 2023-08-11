@@ -15,6 +15,16 @@
     <title>Login Page</title>
 
     <style>
+        .intrologin {
+            margin: 0 auto 0 auto;
+            width: 100%;
+            height: calc(100vw * 0.436);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
         .introtext {
             color: #FFF;
             text-align: center;
@@ -29,6 +39,17 @@
         input {
             box-sizing: border-box;
         }
+
+        @media (min-width:1300px) and (max-width: 1400px){
+            .introtext{
+                font-size: 70px;
+            }
+        }
+        @media (max-width: 1300px){
+            .introtext{
+                font-size: 40px;
+            }
+        }
     </style>
 
 </head>
@@ -39,7 +60,7 @@
     <header style="position: absolute; top: 44px;width: 100%;">
         <nav class="navbar navbar-expand-lg" style="padding: 0;">
             <div class="container-fluid d-flex justify-content-center" style="gap:30px;">
-                <a href="#" style="width: 230px; height: 52px;">
+                <a href="/" style="width: 230px; height: 52px;">
                     <img src="/asset/LOGO.png" alt="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

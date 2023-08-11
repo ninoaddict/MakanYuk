@@ -38,7 +38,7 @@ const connectDB = async () => {
         console.log(error);
         process.exit(1);
     }
-}
+};
 // mongoose.set("useCreateIndex", true);
 // DB model
 const foodSchema = new mongoose.Schema({
@@ -79,7 +79,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use(function (req, res, next) {
     res.locals.currentUser = req.user;
     next();
-})
+});
 
 // HTTP Request
 app.get('/', async (req, res) => {
@@ -111,6 +111,10 @@ app.get('/', async (req, res) => {
     }
 });
 
+app.post('/', (req, res)=>{
+    res.redirect('/foods');
+});
+
 app.get('/categories', async (req, res) => {
     try {
         var myacc;
@@ -128,7 +132,7 @@ app.get('/categories', async (req, res) => {
     }
 });
 
-app.get('/categorysearch', async (req, res) => {
+app.get('/foods', async (req, res) => {
     try {
         var myacc;
         var redir;
@@ -145,7 +149,6 @@ app.get('/categorysearch', async (req, res) => {
             myacc: myacc,
             redir: redir,
             error: false,
-            foods
         }
         // res.status(200).json(response)
         res.render("categorysearch", response)
@@ -161,7 +164,34 @@ app.get('/foods/:foodName', async (req, res) => {
         for (let i = 0; i < foods.length; i++) {
             if (_.lowerCase(foods[i].name) === _.lowerCase(req.params.foodName)) {
                 found = true;
-                res.status(200).json({ error: false, food: foods[i] });
+                var myacc, redir, ratingCheck;
+                if (req.isAuthenticated()) {
+                    let rated = false;
+                    for (let j = 0; j < req.user.ratingGiven.length; j++){
+                        if (req.user.ratingGiven[j] == foods[i].name){
+                            rated = true;
+                            break;
+                        }
+                    }
+                    if (rated){
+                        ratingCheck = "Rated";
+                    }else{
+                        ratingCheck = "Rate";
+                    }
+                    myacc = "My Account";
+                    redir = "/myaccount"
+                } else {
+                    myacc = "Login";
+                    redir = "/login";
+                    ratingCheck = "Rate";
+                }
+                const response = {
+                    food: foods[i],
+                    myacc: myacc,
+                    redir: redir,
+                    ratingCheck: ratingCheck
+                }
+                res.render('food', response);
             }
         }
         if (!found) {
@@ -169,6 +199,31 @@ app.get('/foods/:foodName', async (req, res) => {
         }
     } catch (err) {
         res.status(500).json({ error: true, message: "Internal Server Error" });
+    }
+});
+
+app.post('/foods/:foodName', async (req, res)=>{
+    if (req.isAuthenticated()){
+        const doc = await Food.findOne({name: req.body.foodName});
+        const docUser = await User.findOne({_id: req.user._id});
+        const response = {username: req.user.username, ratingNumber: req.body.rate, review: req.body.review}
+        doc.rating.push(response);
+        const ratingChange = ((doc.currentRating * (doc.rating.length - 1)) + req.body.rate * 1)/(doc.rating.length);
+        doc.currentRating = ratingChange;
+        docUser.ratingGiven.push(req.body.foodName);
+        doc.save();
+        docUser.save()
+        res.redirect('/foods/' + req.params.foodName);
+    }else{
+        res.redirect('/login');
+    }
+});
+
+app.get('/myaccount', (req, res)=>{
+    if (req.isAuthenticated()){
+        res.render("dashboard");
+    }else{
+        res.redirect('/');
     }
 });
 
@@ -277,9 +332,7 @@ app.get('/eatlist', (req, res) => {
             let redir = "/myaccount";
             res.render("eatlist", { myacc: myacc, redir: redir });
         } else {
-            req.session.save(() => {
-                redirect('/login');
-            });
+            res.redirect('/login');
         }
     }
     catch {
@@ -287,7 +340,14 @@ app.get('/eatlist', (req, res) => {
     }
 });
 
-
+app.get('/logout', (req, res, next) => {
+    req.logout((err)=>{
+        if (err){
+            return next(err);
+        }
+        res.redirect('/');
+    });
+});
 // const insertFoods = async () => {
 //     try{
 //         const docs = await Food.insertMany(foodsData);
@@ -304,5 +364,5 @@ app.get('/eatlist', (req, res) => {
 connectDB().then(() => {
     app.listen(port, () => {
         console.log("listening for requests");
-    })
-})
+    });
+});

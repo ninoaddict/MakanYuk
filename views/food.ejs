@@ -1,0 +1,138 @@
+<%- include('partials/header') %>
+    <style>
+        .category-sort-container {
+            fill: #F6F6F6;
+            flex-direction: column;
+            margin-bottom: 100px;
+        }
+
+        .category-item {
+            width: 72px;
+            height: 24px;
+            border-radius: 30px;
+            background: #EFEDED;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-family: Inter;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    </style>
+    <section class="category-sort-container">
+        <div class="back">
+            <div class="back-icon">
+                <a href="/foods" style="text-decoration: none;" id="back-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+                        <path
+                            d="M30.0205 31.4166L23.6038 25L30.0205 18.5833L27.083 15.625L17.708 25L27.083 34.375L30.0205 31.4166ZM45.833 25C45.833 13.5 36.4997 4.16663 24.9997 4.16663C13.4997 4.16663 4.16634 13.5 4.16634 25C4.16634 36.5 13.4997 45.8333 24.9997 45.8333C36.4997 45.8333 45.833 36.5 45.833 25ZM8.33301 25C8.33301 15.7916 15.7913 8.33329 24.9997 8.33329C34.208 8.33329 41.6663 15.7916 41.6663 25C41.6663 34.2083 34.208 41.6666 24.9997 41.6666C15.7913 41.6666 8.33301 34.2083 8.33301 25Z"
+                            fill="#0B0A0A" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="food-content-container">
+            <div class="food-photo-container">
+                <img src="/asset/<%= food.name %>.jpg" alt="">
+                <% let lowerRatingCheck = ratingCheck.toLowerCase() %>
+                <div class="<%= lowerRatingCheck %>-box"></div>
+                <h2 class="<%= ratingCheck %>">
+                    <%= ratingCheck %>
+                </h2>
+            </div>
+            <div class="food-desc hide" id="giverating">
+                <h2>
+                    <%= food.name %>
+                </h2>
+                <% let foodURL=food.name.toLowerCase().split(' ').join('-'); %>
+                    <form action="/foods/<%= foodURL %>" method="POST"
+                        style="position: relative;display: flex;flex-direction: column;">
+                        <input type="text" value="<%= food.name %>" class="hide" name="foodName">
+                        <div class="rate">
+                            <input type="radio" id="star5" name="rate" value="5" />
+                            <label for="star5" title="text"></label>
+                            <input type="radio" id="star4" name="rate" value="4" />
+                            <label for="star4" title="text"></label>
+                            <input type="radio" id="star3" name="rate" value="3" />
+                            <label for="star3" title="text"></label>
+                            <input type="radio" id="star2" name="rate" value="2" />
+                            <label for="star2" title="text"></label>
+                            <input type="radio" id="star1" name="rate" value="1" />
+                            <label for="star1" title="text"></label>
+                        </div>
+                        <textarea id="review" name="review" class="form-control"></textarea>
+                        <button type="submit" name="button" class="review-btn">Submit</button>
+                    </form>
+            </div>
+            <div class="food-desc" id="showcontent">
+                <h2>
+                    <%= food.name %>
+                </h2>
+                <div class="rate-container">
+                    <div class="rate-show">
+                        <% let rate=Math.floor(food.currentRating)%>
+                            <% for (let i=1; i <=5; i++) {%>
+                                <% if (i <=rate){ %>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="39" height="41" viewBox="0 0 80 83"
+                                        fill="#FFD74B">
+                                        <path
+                                            d="M40.0003 61.4546L60.6003 74.3542L55.1337 50.0421L73.3337 33.6842L49.367 31.5746L40.0003 8.64587L30.6337 31.5746L6.66699 33.6842L24.867 50.0421L19.4003 74.3542L40.0003 61.4546Z"
+                                            fill="#FFBE3B" />
+                                    </svg>
+                                    <% }else{ %>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="41"
+                                            viewBox="0 0 80 84" fill="#FFD74B">
+                                            <path
+                                                d="M40.3339 30.8111L43.4411 41.5898H52.7628L45.2592 47.2045L48.3333 57.6366L40.3339 51.2595L32.3344 57.6366L35.4086 47.2045L27.905 41.5898H37.2267L40.3339 30.8111ZM40.3339 6.93164L32.3344 34.6582H7.27832L27.6736 49.9425L19.9386 76.2481L40.3339 59.9934L60.7622 76.2481L52.9942 49.9425L73.3895 34.6582H48.3333L40.3339 6.93164Z"
+                                                fill="#FFD74B" />
+                                        </svg>
+                                        <% } %>
+                                            <% } %>
+                    </div>
+                    <h3>(<%= food.rating.length %>)</h3>
+                </div>
+                <div class="cat-cont">
+                    <% for (let i=0; i < food.categories.length; i++){ %>
+                        <div class="category-item">
+                            <% let cap=food.categories[i][0].toUpperCase() %>
+                                <% let foodCat=cap + food.categories[i].substring(1, food.categories[i].length); %>
+                                    <%= foodCat %>
+                        </div>
+                        <% } %>
+                </div>
+                <div style="max-width: 460.001px;height: 1px;background: #000; margin-top: 30px; margin-bottom: 45px;">
+                </div>
+                <div class="description-box">
+                    <h3>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </h3>
+                </div>
+                <div class="price-box">
+                    <h3>
+                        Rp<%= food.price %>.000
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const rateEl = document.querySelector(".Rate");
+        if (rateEl !== null) {
+            rateEl.addEventListener("click", () => {
+                const showContent = document.querySelector('#showcontent');
+                const giveRating = document.querySelector("#giverating");
+                const rateBox = document.querySelector('.rate-box');
+                const backButton = document.querySelector('#back-button');
+                showContent.classList.toggle('hide');
+                giveRating.classList.toggle('hide');
+                rateEl.classList.toggle('hide');
+                rateBox.classList.toggle('hide');
+                backButton.setAttribute('href', "/foods/<%= foodURL %>");
+            })
+        }
+    </script>
+    <%- include('partials/footer') %>

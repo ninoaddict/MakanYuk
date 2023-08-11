@@ -14,17 +14,33 @@
     <title>Home</title>
     <style>
         footer {
-            margin-top: 9vw;
+            margin-top: 5vw;
         }
 
         .categorytag {
             left: -200px;
         }
-
+        header{
+            margin-bottom: 7vw;
+        }
         @media (max-width: 1400px) {
             .categorytag {
                 left: 0;
                 top: -55px;
+            }
+        }
+        @media (max-width: 1200px){
+            header{
+                margin-bottom: 3vw;
+            }
+            .categories{
+                margin-top: 22.3vw;
+            }
+            .top-rated{
+                margin-top: 17vw;
+            }
+            footer{
+                margin-top: 0;
             }
         }
     </style>
@@ -33,7 +49,7 @@
 <body>
     <img class="img-fluid" src="/asset/homebg.png" alt=""
         style="position: absolute; top: 0;min-height: 512px;z-index: -1;">
-    <header style="margin-bottom: 7vw;">
+    <header>
         <nav class="navbar navbar-expand-lg" style="margin-top:44px; padding: 0;">
             <div class="container-fluid d-flex justify-content-center" style="gap:30px;">
                 <a href="/" style="width: 230px; height: 52px;">
@@ -151,34 +167,37 @@
     <img class="img-fluid" src="/asset/bgbawah.png" alt=""
         style="position: absolute; top: 840px;height: auto;z-index: -1;">
     <section class="top-rated">
-        <div class="viewall"><a href="/categorysearch">View All</a></div>
+        <div class="viewall"><a href="/foods">View All</a></div>
         <div class="box-content position-relative"
             style="height: 480px;border-radius: unset;border-radius: unset;background: unset;box-shadow: unset;width: 943px;">
             <div class="gallery">
                 <% for (let i=0; i < foods.length; i++){ %>
-                    <div class="gallery-item">
-                        <img src="/asset/<%= foods[i].name %>.jpg" alt="" style="object-fit: cover;">
-                        <div class="rating">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="47" height="50" viewBox="0 0 47 50"
-                                fill="none">
-                                <path
-                                    d="M23.0324 18.1683L24.8366 24.5241H30.2492L25.8923 27.8349L27.6773 33.9864L23.0324 30.226L18.3876 33.9864L20.1726 27.8349L15.8156 24.5241H21.2282L23.0324 18.1683ZM23.0324 4.0874L18.3876 20.4368H3.83887L15.6813 29.4494L11.19 44.9609L23.0324 35.3761L34.894 44.9609L30.3836 29.4494L42.226 20.4368H27.6773L23.0324 4.0874Z"
-                                    fill="#FFD74B" />
-                            </svg>
-                            <span class="rating-number">
-                                <%= foods[i].currentRating %>
-                            </span>
+                    <% let foodUrl =  foods[i].name.toLowerCase().split(' ').join('-');%>
+                    <a href="/foods/<%= foodUrl %>" style="text-decoration: none;">
+                        <div class="gallery-item">
+                            <img src="/asset/<%= foods[i].name %>.jpg" alt="" style="object-fit: cover;">
+                            <div class="rating">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="47" height="50" viewBox="0 0 47 50"
+                                    fill="none">
+                                    <path
+                                        d="M23.0324 18.1683L24.8366 24.5241H30.2492L25.8923 27.8349L27.6773 33.9864L23.0324 30.226L18.3876 33.9864L20.1726 27.8349L15.8156 24.5241H21.2282L23.0324 18.1683ZM23.0324 4.0874L18.3876 20.4368H3.83887L15.6813 29.4494L11.19 44.9609L23.0324 35.3761L34.894 44.9609L30.3836 29.4494L42.226 20.4368H27.6773L23.0324 4.0874Z"
+                                        fill="#FFD74B" />
+                                </svg>
+                                <span class="rating-number">
+                                    <%= foods[i].currentRating %>
+                                </span>
+                            </div>
+                            <div class="textandprice">
+                                <h4 class="foodname">
+                                    <%= foods[i].name%>
+                                </h4>
+                                <h3 class="pricenumber">
+                                    <span class="pricecurr">Rp</span>
+                                    <%= foods[i].price + ".000" %>
+                                </h3>
+                            </div>
                         </div>
-                        <div class="textandprice">
-                            <h4 class="foodname">
-                                <%= foods[i].name%>
-                            </h4>
-                            <h3 class="pricenumber">
-                                <span class="pricecurr">Rp</span>
-                                <%= foods[i].price + ".000" %>
-                            </h3>
-                        </div>
-                    </div>
+                    </a>
                     <% } %>
             </div>
             <div class="categorytag position-absolute"><a href="/toprated"
