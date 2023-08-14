@@ -148,7 +148,8 @@
                                                     fill="#FFD74B" />
                                             </svg>
                                             <span class="rating-number">
-                                                <%= foods[i].currentRating %>
+                                                <% let len = Math.min(foods[i].currentRating.toString().length, 4) %>
+                                                <%= foods[i].currentRating.toString().slice(0, len) %>
                                             </span>
                                         </div>
                                         <div class="textandprice">

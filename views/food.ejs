@@ -38,16 +38,19 @@
             <div class="food-photo-container">
                 <img src="/asset/<%= food.name %>.jpg" alt="">
                 <% let lowerRatingCheck = ratingCheck.toLowerCase() %>
+                <div id="star" class="<%= favClass %>">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 58 58">
+                        <path d="M29.0007 51.1729L25.4965 47.9829C13.0507 36.6971 4.83398 29.2538 4.83398 20.1188C4.83398 12.6754 10.6823 6.82709 18.1257 6.82709C22.3307 6.82709 26.3665 8.78459 29.0007 11.8779C31.6348 8.78459 35.6707 6.82709 39.8757 6.82709C47.319 6.82709 53.1673 12.6754 53.1673 20.1188C53.1673 29.2538 44.9507 36.6971 32.5048 48.0071L29.0007 51.1729Z"/>
+                    </svg>
+                </div>
                 <div class="<%= lowerRatingCheck %>-box"></div>
                 <h2 class="<%= ratingCheck %>">
                     <%= ratingCheck %>
                 </h2>
             </div>
             <div class="food-desc hide" id="giverating">
-                <h2>
-                    <%= food.name %>
-                </h2>
-                <% let foodURL=food.name.toLowerCase().split(' ').join('-'); %>
+                <h2 id="foodname"><%= food.name %></h2>
+                <% var foodURL=food.name.toLowerCase().split(' ').join('-'); %>
                     <form action="/foods/<%= foodURL %>" method="POST"
                         style="position: relative;display: flex;flex-direction: column;">
                         <input type="text" value="<%= food.name %>" class="hide" name="foodName">
@@ -67,13 +70,36 @@
                         <button type="submit" name="button" class="review-btn">Submit</button>
                     </form>
             </div>
+            <div class="food-desc hide" id="showrating">
+                <h2>
+                    <%= food.name %>
+                </h2>
+                <% var foodURL=food.name.toLowerCase().split(' ').join('-'); %>
+                    <form action="/foods/<%= foodURL %>/savechanges" method="POST"
+                        style="position: relative;display: flex;flex-direction: column;">
+                        <input type="text" value="<%= food.name %>" class="hide" name="foodName">
+                        <div class="rate">
+                            <% for (let i = 5; i >= 1; i--){ %>
+                                <% if (reviewStar === i){%>
+                                    <input type="radio" id="stared<%= i %>" name="rated" value="<%= i %>" checked>
+                                    <label for="stared<%= i %>" title="text"></label>
+                                <% } else{%>
+                                    <input type="radio" id="stared<%= i %>" name="rated" value="<%= i %>">
+                                    <label for="stared<%= i %>" title="text"></label>
+                                <% } %>
+                            <% } %>
+                        </div>
+                        <textarea id="review" name="review" class="form-control"><%= reviewContent %></textarea>
+                        <button type="submit" name="button" class="review-btn">Save Changes</button>
+                    </form>
+            </div>
             <div class="food-desc" id="showcontent">
                 <h2>
                     <%= food.name %>
                 </h2>
                 <div class="rate-container">
                     <div class="rate-show">
-                        <% let rate=Math.floor(food.currentRating)%>
+                        <% var rate=Math.floor(food.currentRating)%>
                             <% for (let i=1; i <=5; i++) {%>
                                 <% if (i <=rate){ %>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="39" height="41" viewBox="0 0 80 83"
@@ -97,8 +123,8 @@
                 <div class="cat-cont">
                     <% for (let i=0; i < food.categories.length; i++){ %>
                         <div class="category-item">
-                            <% let cap=food.categories[i][0].toUpperCase() %>
-                                <% let foodCat=cap + food.categories[i].substring(1, food.categories[i].length); %>
+                            <% var cap=food.categories[i][0].toUpperCase() %>
+                                <% var foodCat=cap + food.categories[i].substring(1, food.categories[i].length); %>
                                     <%= foodCat %>
                         </div>
                         <% } %>
@@ -121,6 +147,7 @@
     </section>
     <script>
         const rateEl = document.querySelector(".Rate");
+        const ratedEl = document.querySelector('.Rated');
         if (rateEl !== null) {
             rateEl.addEventListener("click", () => {
                 const showContent = document.querySelector('#showcontent');
@@ -134,5 +161,47 @@
                 backButton.setAttribute('href', "/foods/<%= foodURL %>");
             })
         }
+        if (ratedEl !== null){
+            ratedEl.innerHTML = '<%= ratingCheck %> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M4.99805 28.75V35H11.248L29.6814 16.5667L23.4314 10.3167L4.99805 28.75ZM9.86471 31.6667H8.33138V30.1333L23.4314 15.0333L24.9647 16.5667L9.86471 31.6667ZM34.5147 9.38333L30.6147 5.48333C30.2814 5.15 29.8647 5 29.4314 5C28.998 5 28.5814 5.16667 28.2647 5.48333L25.2147 8.53333L31.4647 14.7833L34.5147 11.7333C35.1647 11.0833 35.1647 10.0333 34.5147 9.38333Z" fill="#F9F9F9"/></svg>';
+            ratedEl.addEventListener("click", () => {
+                const showContent = document.querySelector("#showcontent");
+                const showRating = document.querySelector("#showrating");
+                const rateBox = document.querySelector('.rated-box');
+                const backButton = document.querySelector('#back-button');
+                showContent.classList.toggle('hide');
+                showRating.classList.toggle('hide');
+                ratedEl.classList.toggle('hide');
+                rateBox.classList.toggle('hide');
+                backButton.setAttribute('href', "/foods/<%= foodURL %>");
+            })
+        }
+        var star = document.getElementById("star");
+
+        star.onclick = function() {
+            var isAdded;
+            let foodName = $('#foodname').text();
+            console.log(foodName);
+            if (star.className == "active"){
+                idAdded = false;
+            }else{
+                isAdded = true;
+            }
+            let parameters = {isAdded : isAdded, foodName: foodName};
+            star.classList.toggle('active');
+
+            // $.ajax({
+            //     url: '/addfav',
+            //     type: 'PUT',
+            //     contentType: 'application/json',
+            //     data: JSON.stringify(parameters),
+            //     success: (res)=>{
+            //         console.log("success");
+            //     }
+            // });
+
+            $.post('/addfav', parameters, ()=>{
+                console.log("Go!");
+            });
+        };
     </script>
     <%- include('partials/footer') %>

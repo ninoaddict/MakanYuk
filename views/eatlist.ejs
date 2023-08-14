@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="/css/styles.css">
+    <title>Eatlist</title>
     <style>
         .content-box {
             overflow-x: scroll;
@@ -44,7 +45,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" style="flex-grow: 0;">
-                    <ul class="navbar-nav" style="gap: 40px;">
+                    <ul class="navbar-nav">
                         <li class="nav-item d-flex align-items-center">
                             <a href="/categories">Categories</a>
                         </li>
@@ -75,40 +76,22 @@
         font-weight: 700;
         line-height: normal;">Hi, <%= currentUser.username%>!</h1>
     </div>
-    <section class="content-container" style="margin-top: 250px;">
-        <div class="favcat">
-            <p style="color: #000;
-            font-family: Inter;
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;margin-left: 15px;margin-bottom: 0;">Favorite Categories</p>
-            <div class="content-box">
-                <% for (let i=0; i < currentUser.favoriteCategories.length; i++) {%>
-                    <div class="content-box-item">
-                        <h3 style="color: #000;
-                        font-family: Poppins;
-                        font-size: 20px;
-                        font-style: normal;
-                        font-weight: 600;
-                        line-height: normal;margin: 0;">
-                            <%= currentUser.favoriteCategories[i] %>
-                        </h3>
-                    </div>
-                    <% } %>
-            </div>
+    <section class="content-container" style="margin-top: 1rem;">
             <div class="favdish">
                 <p style="color: #000;
             font-family: Inter;
             font-size: 20px;
             font-style: normal;
             font-weight: 400;
-            line-height: normal;margin-left: 15px;margin-top: 30px;">Favorite Dishes</p>
+            line-height: normal;margin-left: 15px;">Favorite Dishes</p>
                 <div class="content-box">
                     <% for (let i=0; i < currentUser.favoriteFood.length; i++) {%>
-                        <div class="content-box-img">
-                            <img src="/asset/<%= currentUser.favoriteFood[i] %>.jpg" alt="">
-                        </div>
+                        <% var foodURL = currentUser.favoriteFood[i].toLowerCase().split(' ').join('-'); %>
+                        <a href="/foods/<%= foodURL %>">
+                            <div class="content-box-img">
+                                <img src="/asset/<%= currentUser.favoriteFood[i] %>.jpg" alt="">
+                            </div>
+                        </a>
                         <% } %>
                 </div>
             </div>
@@ -121,9 +104,12 @@
             line-height: normal;margin-left: 15px;margin-top: 30px;">Your Ratings</p>
                 <div class="content-box">
                     <% for (let i=0; i < currentUser.ratingGiven.length; i++) {%>
-                        <div class="content-box-img">
-                            <img src="/asset/<%= currentUser.ratingGiven[i] %>.jpg" alt="">
-                        </div>
+                        <% var foodURL = currentUser.ratingGiven[i].foodName.toLowerCase().split(' ').join('-'); %>
+                        <a href="/foods/<%= foodURL  %>">
+                            <div class="content-box-img">
+                                <img src="/asset/<%= currentUser.ratingGiven[i].foodName %>.jpg" alt="">
+                            </div>
+                        </a>
                         <% } %>
                 </div>
             </div>

@@ -11,7 +11,7 @@
 
 header nav a {
     display: flex;
-    width: 108px;
+    /* width: 108px; */
     height: 30px;
     justify-content: center;
     align-items: center;
@@ -43,6 +43,10 @@ footer a {
 .footerelementcontainer {
     display: flex;
     gap: 150px;
+}
+
+.navbar-nav {
+    gap: 45px;
 }
 
 .footercontainer {
@@ -529,9 +533,9 @@ footer {
 }
 
 .hiuser {
-    position: absolute;
-    top: 189px;
-    left: 40%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5vw;
 }
 
 .content-container {
@@ -550,7 +554,8 @@ footer {
 
 .content-box {
     margin-top: 15px;
-    width: 1122px;
+    max-width: 1122px;
+    min-width: 800px;
     height: fit-content;
     display: flex;
     box-sizing: border-box;
@@ -1008,7 +1013,6 @@ footer {
 
 .rate-show {
     display: flex;
-    height: 50px;
     gap: 8px;
 }
 
@@ -1194,4 +1198,42 @@ footer {
     border-radius: 30px;
     background: #FFF;
     box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#star {
+    position: absolute;
+    display: block;
+    fill: #CDCDCD;
+    transition: fill 200ms;
+    z-index: 6;
+    bottom: 2.5%;
+}
+
+#star.active {
+    fill: #E935B8;
+    animation: fav 600ms ease;
+}
+
+@keyframes fav {
+    70% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.nav-item a:hover{
+    animation: navhov 3s ease-in-out;
+    color: #efefef;
+}
+
+@keyframes navhov{
+    10%{
+        text-shadow: 0 3px 3px #222; 
+    }
+    100%{
+        text-shadow: 0 3px 3px #222;
+    }
 }
