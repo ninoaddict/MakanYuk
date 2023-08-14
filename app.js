@@ -95,7 +95,7 @@ app.get('/', async (req, res) => {
         // return sorted food based on rating
         let foods = await Food.find({});
         foods.sort((a, b) => b.currentRating - a.currentRating);
-
+        foods = foods.slice(0, 6);
         var myacc;
         var redir;
         if (req.isAuthenticated()) {
@@ -260,6 +260,7 @@ app.get('/toprated', async (req, res) => {
         }
         let foods = await Food.find({});
         foods.sort((a, b) => b.currentRating - a.currentRating);
+        foods = foods.slice(0, 6);
         // res.status(200).json({error: false, foods : foods});
         res.render("toprated", { foods: foods, pageTitle: "", month: "Agustus", myacc: myacc, redir: redir, pageTitle: "Top Rated"});
     } catch {
@@ -380,7 +381,6 @@ app.get('/logout', (req, res, next) => {
 });
 
 app.post('/addfav', async (req, res)=>{
-    // console.log(req.body);
     if (req.isAuthenticated()){
         let addOrNot = req.body.isAdded;
         let foodName = req.body.foodName;
@@ -395,9 +395,6 @@ app.post('/addfav', async (req, res)=>{
             });
         }
         docUser.save();
-    }else{
-        req.flash('message', 'Please Login to Your Account!');
-        res.redirect('/login');
     }
 });
 
