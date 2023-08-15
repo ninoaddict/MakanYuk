@@ -234,7 +234,7 @@ app.post('/foods/:foodName', async (req, res)=>{
         docUser.save()
         res.redirect('/foods/' + req.params.foodName);
     }else{
-        req.flash('message', 'Please login to your account!');
+        req.flash('error', 'Please login to your account!');
         res.redirect('/login');
     }
 });
@@ -290,7 +290,7 @@ app.get('/login', (req, res) => {
         if (req.isAuthenticated()) {
             res.redirect('/');
         } else {
-            res.render('login', {message : req.flash('message')});
+            res.render('login', {message : req.flash('error')});
         }
     }
     catch {
@@ -330,30 +330,11 @@ app.post('/register', (req, res) => {
     }
 });
 
-app.post('/login', (req, res) => {
-    const user = new User({
-        username: req.body.username,
-        password: req.body.password
-    });
-    req.login(user, function (err) {
-        if (err) {
-            res.redir('/login');
-        } else {
-            passport.authenticate("local", (err, user, next) => {
-                if (err){
-                    return next(err);
-                }
-                if (!err){
-                    req.flash('message', 'User not found! Please try again')
-                    return res.redirect('/login');
-                }
-            })
-            (req, res, function () {
-                res.redirect('/');
-            });
-        }
-    });
-});
+app.post('/login',
+  passport.authenticate('local', { failureRedirect: '/login', failureMessage: true, failureFlash: true, failureFlash: 'Invalid username or password.' }),
+  function(req, res) {
+    res.redirect('/');
+  });
 
 app.get('/eatlist', (req, res) => {
     try {
@@ -362,7 +343,7 @@ app.get('/eatlist', (req, res) => {
             let redir = "/myaccount";
             res.render("eatlist", { myacc: myacc, redir: redir });
         } else {
-            req.flash('message', 'Please login to your account!');
+            req.flash('error', 'Please login to your account!');
             res.redirect('/login');
         }
     }

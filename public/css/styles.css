@@ -313,6 +313,7 @@ footer {
 }
 
 .cari {
+    border: 0;
     box-sizing: border-box;
     display: inline-flex;
     width: 97px;
