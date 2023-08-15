@@ -95,7 +95,7 @@ app.get('/', async (req, res) => {
         // return sorted food based on rating
         let foods = await Food.find({});
         foods.sort((a, b) => b.currentRating - a.currentRating);
-        foods = foods.slice(0, 6);
+        foods = foods.slice(0, 3);
         var myacc;
         var redir;
         if (req.isAuthenticated()) {
@@ -234,7 +234,7 @@ app.post('/foods/:foodName', async (req, res)=>{
         docUser.save()
         res.redirect('/foods/' + req.params.foodName);
     }else{
-        req.flash('message', 'Please Login to Your Account!');
+        req.flash('message', 'Please login to your account!');
         res.redirect('/login');
     }
 });
@@ -344,7 +344,7 @@ app.post('/login', (req, res) => {
                     return next(err);
                 }
                 if (!err){
-                    req.flash('message', 'User Not Found! Please Try Again')
+                    req.flash('message', 'User not found! Please try again')
                     return res.redirect('/login');
                 }
             })
@@ -362,7 +362,7 @@ app.get('/eatlist', (req, res) => {
             let redir = "/myaccount";
             res.render("eatlist", { myacc: myacc, redir: redir });
         } else {
-            req.flash('message', 'Please Login to Your Account!');
+            req.flash('message', 'Please login to your account!');
             res.redirect('/login');
         }
     }

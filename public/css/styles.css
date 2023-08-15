@@ -1038,7 +1038,7 @@ footer {
 
 .description-box {
     box-sizing: border-box;
-    padding:0 20px;
+    padding: 0 20px;
     width: 465px;
     height: 203px;
     flex-shrink: 0;
@@ -1229,16 +1229,41 @@ footer {
     }
 }
 
-.nav-item a:hover{
-    animation: navhov 3s ease-in-out;
-    color: #efefef;
+.nav-item .hovnav{
+    transition: color 500ms, text-shadow 500ms;
 }
 
-@keyframes navhov{
-    10%{
-        text-shadow: 0 3px 3px #222; 
-    }
-    100%{
-        text-shadow: 0 3px 3px #222;
-    }
+.nav-item .hovnav:hover {
+    color: #efefef;
+    text-shadow: 0 3px 3px #222;
+}
+
+.loginmyacc {
+    color: #FFF;
+    width: fit-content;
+    padding: 12px 32px;
+    gap: 12px;
+    text-decoration: none;
+    border-radius: 30px;
+    background: #000;
+    box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    transition: background 500ms;
+}
+
+.loginmyacc:hover{
+    box-shadow: unset;
+    background: #444;
+}
+
+.container-fluid a img[alt = "logo"]{
+    transition: all 800ms;
+}
+
+.container-fluid a img[alt = "logo"]:hover{
+    transform: scale(1.2);
 }

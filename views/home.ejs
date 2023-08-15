@@ -80,21 +80,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" style="flex-grow: 0;">
                     <ul class="navbar-nav">
                         <li class="nav-item d-flex align-items-center">
-                            <a href="/categories">Categories</a>
+                            <a href="/categories" class="hovnav">Categories</a>
                         </li>
                         <li class="nav-item d-flex align-items-center">
-                            <a href="/toprated">Top Rated</a>
+                            <a href="/toprated" class="hovnav">Top Rated</a>
                         </li>
                         <li class="nav-item d-flex align-items-center">
-                            <a href="/eatlist">Eatlist</a>
+                            <a href="/eatlist" class="hovnav">Eatlist</a>
                         </li>
                         <li class="nav-item">
-                            <a href="<%=redir%>" class="d-flex align-items-center justify-content-center" style="color: #FFF; width: fit-content; padding: 12px 32px; gap: 12px; text-decoration: none; border-radius: 30px; background: #000; box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25);
-                            font-family: 'Montserrat', sans-serif;
-                            font-size: 16px;
-                            font-style: normal;
-                            font-weight: 400;
-                            line-height: 150%; /* 24px */">
+                            <a href="<%=redir%>" class="d-flex align-items-center justify-content-center loginmyacc" >
                                 <%= myacc %>
                             </a>
                         </li>
@@ -116,7 +111,7 @@
     </section>
     <section class="categories">
         <div class="viewall">
-            <a href="/categories">View All</a>
+            <a href="/categories" class="hovnav">View All</a>
         </div>
         <div class="category-container d-flex justify-content-evenly align-items-center position-relative">
             <a href="/foods" style="text-decoration: none;">
@@ -222,7 +217,7 @@
     </section>
     <img class="img-fluid" src="/asset/bgbawah.png" alt="" style="position: absolute; top: 840px;height: auto;z-index: -1;">
     <section class="top-rated">
-        <div class="viewall"><a href="/toprated">View All</a></div>
+        <div class="viewall"><a href="/toprated" class="hovnav">View All</a></div>
         <div class="box-content position-relative"
             style="height: 480px;border-radius: unset;border-radius: unset;background: unset;box-shadow: unset;width: 943px;">
             <div class="gallery">
@@ -256,7 +251,7 @@
                         </a>
                         <% } %>
             </div>
-            <div class="categorytag position-absolute"><a href="/toprated"
+            <div class="categorytag position-absolute"><a href="/toprated" class="hovnav"
                     style="color: #000;font-feature-settings: 'clig' off, 'liga' off;font-family: Poppins;font-size: 21.961px;font-style: normal;font-weight: 500;line-height: 150%; /* 32.941px */text-decoration: none;">Top
                     Rated</a>
             </div>
